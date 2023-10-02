@@ -75,5 +75,39 @@ namespace Data.Base
 
         }
 
+        public async Task<IActionResult> DeleteToApi(string controllerName, string id, string token = "")
+        {
+            try
+            {
+                var client = _httpClient.CreateClient("useApi");
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                }
+
+                var response = await client.DeleteAsync($"{controllerName}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                  
+                    return Ok("borrado con exito"); 
+                }
+
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    
+                    return NotFound();
+                }
+
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                
+                return StatusCode(500, ex.Message); 
+            }
+        }
+
     }
 }

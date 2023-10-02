@@ -12,20 +12,20 @@ let table = new DataTable('#usuarios', {
         { data: 'nombre', title: 'Nombre' },
         { data: 'userName', title: 'UserName' },
         { data: 'email', title: 'Email' }, // este si llega
-        { data: 'tipo', title: 'Tipo' }
-        //{
-        //    data: function (data) {
-        //        var botones = 
-        //        `<td><a href='javascript:EditarUsuario(${JSON.stringify(data)})'><i class="fa-solid fa-pen-to-square editarUsuario"></i></td>`+
-        //            `<td><a href='javascript:EliminarUsuario(${JSON.stringify(data)})'><i class="fa-solid fa-trash eliminarUsuario"></i></td>`
-        //        return botones;
-        //    }
-        //}
+        { data: 'tipo', title: 'Tipo' },
+        {
+            data: function (data) {
+                var botones = 
+                `<td><a href='javascript:EditarUsuario(${JSON.stringify(data)})'><i class="fa-solid fa-pen-to-square editarUsuario"></i></td>`+
+                    `<td><a href='javascript:EliminarUsuario(${JSON.stringify(data)})'><i class="fa-solid fa-trash eliminarUsuario"></i></td>`
+                return botones;
+            }
+        }
         
     ]
 });
 
-/*
+
 
 function AgregarUsuario() {
     $.ajax({
@@ -69,4 +69,4 @@ function EliminarUsuario(data) {
         }
 
     });
-}*/
+}

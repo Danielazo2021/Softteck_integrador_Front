@@ -4,13 +4,13 @@ namespace UmsaSofttekFront.ViewModels
 {
     public class UsuariosViewModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string FirstName { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public int Dni { get; set; }
-        public string Contrasena { get; set; }
-        public int Tipo { get; set; }
+        public int dni { get; set; }
+        public string contrasena { get; set; }
+        public Tipo tipo { get; set; }
 
             
 
@@ -22,9 +22,9 @@ namespace UmsaSofttekFront.ViewModels
             usuariosViewModel.FirstName = usuario.Nombre;
             usuariosViewModel.UserName = usuario.UserName;
             usuariosViewModel.Email = usuario.Email;
-            usuariosViewModel.Dni = usuario.Dni;
-            usuariosViewModel.Tipo = usuario.Tipo;
-            usuariosViewModel.Contrasena = usuario.Contrasena;
+            usuariosViewModel.dni = usuario.dni;
+            usuariosViewModel.tipo = usuario.tipo;
+            usuariosViewModel.contrasena = usuario.contrasena;
 
 
             return usuariosViewModel;
