@@ -1,11 +1,6 @@
 ﻿namespace UmsaSofttekFront.Models
 {
-    //public class Login
-    //{
-    //    public string UserName { get; set; }
-    //    public string Email { get; set; }
-    //    public string Token { get; set; }
-    //}
+ 
     public class ApiResponse<T>
     {
         public int Status { get; set; }
